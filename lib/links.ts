@@ -12,11 +12,13 @@ import {
   Award,
 } from "lucide-react"
 
+import type { LucideIcon } from "lucide-react"
+
 // ---------------- Type ----------------
 export type links = {
   name: string
   href: string
-  icon?: React.ComponentType<any> // optional because navLinks may not have icons
+  icon?: LucideIcon // optional because navLinks may not have icons
 }
 
 // ---------------- Top navigation links ----------------
