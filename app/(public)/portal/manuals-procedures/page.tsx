@@ -1,5 +1,5 @@
 const ManualsPage = () => {
-  return <div>ManualsPage</div>;
+  return <div>Manuals & Procedures</div>;
 };
 
 export default ManualsPage;

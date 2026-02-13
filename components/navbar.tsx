@@ -1,29 +1,24 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-import { ThemeToggle } from "./theme-toggle"
-import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs"
+} from "@/components/ui/sheet";
+import { ThemeToggle } from "./theme-toggle";
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { navLinks, portalLinks } from "@/lib/links";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Manuals", href: "/manuals" },
-  { name: "Rules", href: "/rules" },
-  { name: "Contact", href: "/contact" },
-]
+
 
 export function Navbar() {
   return (
     <header className="border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        
         {/* Left */}
         <div className="flex items-center gap-4">
           <Sheet>
@@ -34,9 +29,31 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetTitle className="m-4">Menu</SheetTitle>
-              <nav className="flex flex-col gap-4 mt-2 ml-4">
+
+              {/* Public / Navbar Links */}
+              <nav className="flex flex-col gap-2 mt-2 ml-4">
                 {navLinks.map((link) => (
-                  <Link key={link.name} href={link.href} className="text-lg">
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-base font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Divider */}
+              <div className=" mx-4 h-px bg-border" />
+
+              {/* Portal Links */}
+              <nav className="flex flex-col gap-3 ml-4">
+                {portalLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition"
+                  >
                     {link.name}
                   </Link>
                 ))}
@@ -44,15 +61,19 @@ export function Navbar() {
             </SheetContent>
           </Sheet>
 
-          <Link href="/" className="font-bold text-xl tracking-wide">
-            Marine Portal
+          <Link href="/" className="font-bold text-md tracking-wide">
+            Marine QHSEE Management Portal
           </Link>
         </div>
 
         {/* Desktop Links */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-sm hover:text-primary">
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-sm hover:text-primary"
+            >
               {link.name}
             </Link>
           ))}
@@ -74,5 +95,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
