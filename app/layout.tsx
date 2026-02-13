@@ -28,7 +28,16 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`
+            ${geistSans.variable} 
+            ${geistMono.variable} 
+            antialiased 
+            min-h-screen
+            bg-[url('/bgmarine.jpg')] 
+            bg-cover 
+            bg-center 
+            bg-fixed
+          `}
         >
           <Providers>{children}</Providers>
         </body>

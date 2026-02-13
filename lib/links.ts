@@ -30,12 +30,15 @@ export const navLinks: links[] = [
 
 // ---------------- Home links ----------------
 export const homeLinks: links[] = [
+  { name: "Manuals & Procedures", href: "/portal/manuals-procedures", icon: BookOpen },
+  { name: "Bunkering & Analytics", href: "/home/bunkering-analytics", icon: Layers },
+  { name: "Crewing", href: "/portal/crewing", icon: Layers },
   { name: "All Forms", href: "/home/all-forms", icon: Layers },
   { name: "Work Permit", href: "/portal/work-permit", icon: Layers },
-  { name: "Company Circulars", href: "/home/company-circulars", icon: ClipboardList },
+  { name: "Incident Investigation / NM / UA", href: "/portal/incident-investigation", icon: AlertTriangle },
   { name: "Flag Requirements & Circulars", href: "/home/flag-requirements-circulars", icon: Flag },
   { name: "Risk Assessment", href: "/portal/risk-assessment", icon: Activity },
-  { name: "Incident Investigation / NM / UA", href: "/portal/incident-investigation", icon: AlertTriangle },
+  { name: "Company Circulars", href: "/home/company-circulars", icon: ClipboardList },
 ]
 
 // ---------------- Portal links ----------------
@@ -45,8 +48,8 @@ export const portalLinks: links[] = [
   { name: "Manuals & Procedures", href: "/portal/manuals-procedures", icon: BookOpen },
   { name: "Deck Forms", href: "/portal/deck-forms", icon: Anchor },
   { name: "Engine Forms", href: "/portal/engine-forms", icon: Settings },
-  { name: "Work Permit", href: "/portal/work-permit", icon: FileText },
   { name: "Miscellaneous Forms", href: "/portal/miscellaneous-forms", icon: Settings },
+  { name: "Work Permit", href: "/portal/work-permit", icon: FileText },
   { name: "Risk Assessment", href: "/portal/risk-assessment", icon: Activity },
   { name: "Incident Investigation / NM / UA", href: "/portal/incident-investigation", icon: AlertTriangle },
   { name: "Library", href: "/portal/library", icon: BookOpen },

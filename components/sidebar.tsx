@@ -15,7 +15,7 @@ export function Sidebar() {
   )
 
   return (
-    <aside className="hidden md:flex md:flex-col w-64 border-r bg-muted/40 h-[calc(100vh-4rem)] p-4 gap-4">
+    <aside className="hidden md:flex md:flex-col w-64 border-r bg-background/90 h-[calc(100vh-4rem)] p-4 gap-4">
       {/* Search */}
       <div className="relative">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />

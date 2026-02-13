@@ -13,12 +13,12 @@ import { ThemeToggle } from "./theme-toggle";
 import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import { navLinks, portalLinks } from "@/lib/links";
 
-
+import Image from "next/image";
 
 export function Navbar() {
   return (
-    <header className="border-b bg-background">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+    <header className="border-b bg-background/90">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Left */}
         <div className="flex items-center gap-4">
           <Sheet>
@@ -61,8 +61,21 @@ export function Navbar() {
             </SheetContent>
           </Sheet>
 
-          <Link href="/" className="font-bold text-md tracking-wide">
-            Marine QHSEE Management Portal
+          <Link
+            href="/"
+            className="font-bold text-sm tracking-wide flex flex-row gap-4 text-gray-400"
+          >
+            <Image
+              src="/mobilemarine.jpg"
+              alt="Global Marine Logo"
+              width={48}
+              height={48}
+              className="object-contain rounded-full"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl text-neutral-400">Global Marine</span>{" "}
+              QHSEE Management Portal
+            </div>
           </Link>
         </div>
 

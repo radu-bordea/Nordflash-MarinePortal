@@ -1,46 +1,68 @@
 // app/(home)/page.tsx
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { homeLinks } from "@/lib/links"
-import { Input } from "@/components/ui/input"
-import { Search } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import Link from "next/link";
+import { homeLinks } from "@/lib/links";
+import { Input } from "@/components/ui/input";
+import { ArrowUp, ArrowDown, Search } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Bell } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
 
   const filteredLinks = homeLinks.filter((link) =>
-    link.name.toLowerCase().includes(query.toLowerCase())
-  )
+    link.name.toLowerCase().includes(query.toLowerCase()),
+  );
 
   return (
     <section className="w-full max-w-6xl mx-auto px-4 py-10">
+      <div className="flex gap-4">
+        {/* Search */}
+        <div className="relative w-full mb-8">
+          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Search forms, permits, circulars..."
+            className="pl-8"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
+        <Button className="bg-red-400 hover:bg-red-500 text-white">
+          <Bell /> Emergency Contacts{" "}
+          <span>
+            <ArrowDown size={24} color="black" />
+          </span>
+        </Button>
+      </div>
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-semibold">Portal Home</h1>
+      <div className="mb-6 text-center">
+        <h1 className="text-2xl font-semibold">
+          <span className="text-neutral-400">Mobile Marine</span>{" "}
+          <span className="text-xl text-neutral-500">
+            QHSEE Management Portal
+          </span>
+        </h1>
         <p className="text-sm text-muted-foreground">
-          Quickly access forms and resources
+          QUALITY - HEALTH - SAFETY - ENERGY ENVIRONMENT
         </p>
       </div>
 
-      {/* Search */}
-      <div className="relative max-w-md mb-8">
-        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-        <Input
-          placeholder="Search forms, permits, circulars..."
-          className="pl-8"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </div>
+      <h1 className="max-w-md py-1 px-2  my-4 dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm flex justify-between items-center text-sm md:text-lg">
+        <span>TRIR: 0.00</span> | <span>LTIF: 0.00</span> |{" "}
+        <span>NM/UA: 0</span>{" "}
+        <span>
+          <ArrowUp size={24} color="black" />
+        </span>
+      </h1>
 
       {/* Grid */}
       {filteredLinks.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredLinks.map((link) => {
-            const Icon = link.icon
+            const Icon = link.icon;
 
             return (
               <Link
@@ -50,7 +72,7 @@ export default function HomePage() {
                   "group rounded-xl border bg-card/80 backdrop-blur p-6",
                   "flex items-center gap-4 transition-all",
                   "hover:shadow-lg hover:-translate-y-1 hover:bg-accent/40",
-                  "active:scale-[0.98]"
+                  "active:scale-[0.98]",
                 )}
               >
                 {Icon && (
@@ -64,18 +86,37 @@ export default function HomePage() {
                     {link.name}
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    Open {link.name}
+                    {link.href === "/portal/manuals-procedures" && (
+                      <span>(Policies & operational manuals)</span>
+                    )}
+                    {link.href === "/portal/crewing" && (
+                      <span>(Crew charges)</span>
+                    )}
+                    {link.href === "/portal/incident-investigation" && (
+                      <span>(Near Misses, Unsafe Acts, Incidents)</span>
+                    )}
+                    {link.href === "/portal/risk-assessment" && (
+                      <span>(Job Hazard Analysis)</span>
+                    )}
                   </div>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
       ) : (
-        <p className="text-sm text-muted-foreground mt-10">
-          No results found.
-        </p>
+        <p className="text-sm text-muted-foreground mt-10">No results found.</p>
       )}
+      <h1 className="flex flex-col md:flex-row max-w-4xl py-2 px-2 my-4 text-center mx-auto dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm justify-between items-center">
+        <span>ZERO INCIDENTS</span> <span className="hidden md:block">|</span>{" "}
+        <span>OPERATIONAL EXCELLENCE</span>{" "}
+        <span className="hidden md:block">|</span>{" "}
+        <span>ENVIRONMENTAL COMPLIANCE</span>{" "}
+      </h1>
+      <h1 className="max-w-4xl border-y-2 text-center mx-auto py-8 px-2 my-8 rounded-xl flex justify-around items-center text-md md:text-lg">
+        <span>MISSION</span> | <span>VISION</span>
+      </h1>
+      <h1 className="text-center text-md md:text-lg">MOBILE MARINE INTL</h1>
     </section>
-  )
+  );
 }
