@@ -70,8 +70,9 @@ export function Navbar() {
               alt="Global Marine Logo"
               width={48}
               height={48}
-              className="object-contain rounded-full"
+              className="object-contain rounded-full w-12 h-12 md:w-12 md:h-12"
             />
+
             <div className="flex flex-col">
               <span className="text-xl text-neutral-400">Global Marine</span>{" "}
               QHSEE Management Portal
