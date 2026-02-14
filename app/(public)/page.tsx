@@ -18,7 +18,7 @@ export default function HomePage() {
   );
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-10">
+    <section className="w-full max-w-6xl mx-auto px-4 py-2">
       <div className="flex gap-4">
         {/* Search */}
         <div className="relative w-full mb-8">
@@ -38,7 +38,7 @@ export default function HomePage() {
         </Button>
       </div>
       {/* Header */}
-      <div className="mb-6 text-center">
+      <div className="mb-10 text-center">
         <h1 className="text-2xl font-semibold">
           <span className="text-neutral-400">Mobile Marine</span>{" "}
           <span className="text-xl text-neutral-500">
@@ -50,7 +50,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      <h1 className="max-w-md py-1 px-2  my-4 dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm flex justify-between items-center text-sm md:text-lg">
+      <h1 className="max-w-md py-1 px-2 my-8 dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm flex justify-between items-center text-sm md:text-lg">
         <span>TRIR: 0.00</span> | <span>LTIF: 0.00</span> |{" "}
         <span>NM/UA: 0</span>{" "}
         <span>
