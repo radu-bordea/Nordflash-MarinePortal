@@ -74,7 +74,7 @@ export function Navbar() {
             />
 
             <div className="flex flex-col">
-              <span className="text-xl text-neutral-400">Global Marine</span>{" "}
+              <span className="text-xl text-neutral-400">Mobile Marine</span>{" "}
               QHSEE Management Portal
             </div>
           </Link>
