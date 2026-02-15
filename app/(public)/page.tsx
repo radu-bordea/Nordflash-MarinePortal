@@ -1,4 +1,3 @@
-// app/(home)/page.tsx
 "use client";
 
 import Link from "next/link";
@@ -12,34 +11,41 @@ export default function HomePage() {
     <section className="w-full max-w-6xl mx-auto px-4 py-4">
       <div className="flex flex-col md:flex-row items-center justify-center gap-2">
         {/* Header */}
-        <div className=" text-center mb-2">
-          <h1 className="text-md md:text-2xl font-semibold">
-            <span className="text-neutral-400">Mobile Marine</span>{" "}
-            <span className=" text-neutral-500">
+        <div className="text-center mb-2">
+          <h1 className="text-md md:text-2xl font-semibold tracking-tight">
+            <span className="text-primary font-semibold">
+              Mobile Marine
+            </span>{" "}
+            <span className="text-muted-foreground font-medium">
               QHSEE Management Portal
             </span>
           </h1>
-          <p className="text-xs md:text-sm text-muted-foreground">
-            QUALITY - HEALTH - SAFETY - ENERGY ENVIRONMENT
+          <p className="text-xs md:text-sm text-muted-foreground tracking-wide">
+            QUALITY · HEALTH · SAFETY · ENERGY · ENVIRONMENT
           </p>
         </div>
 
         {/* Top Bar */}
         <div className="flex items-center justify-end mb-2">
-          <Button className="bg-red-400 hover:bg-red-500 text-white flex items-center gap-2">
+          <Button className="bg-red-500 hover:bg-red-600 text-white flex items-center gap-2 shadow-sm transition-all">
             <Bell className="h-4 w-4" />
             Emergency Contacts
-            <ArrowDown size={20} className="text-black" />
+            <ArrowDown size={18} className="text-white/90" />
           </Button>
         </div>
       </div>
 
       {/* KPI Bar */}
-      <div className="max-w-md mx-auto py-1 px-3 my-4 dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm flex justify-between items-center text-xs md:text-sm">
-        <span>TRIR: 0.00</span>
-        <span>LTIF: 0.00</span>
-        <span>NM/UA: 0</span>
-        <ArrowUp size={20} className="text-black m" />
+      <div className="max-w-md mx-auto py-1 px-3 my-4 
+        bg-gradient-to-r from-neutral-100 to-neutral-50 
+        dark:from-slate-700 dark:to-slate-800
+        text-neutral-600 dark:text-neutral-400
+        rounded-sm flex justify-between items-center 
+        text-xs md:text-sm shadow-sm">
+        <span className="font-medium">TRIR: 0.00</span>
+        <span className="font-medium">LTIF: 0.00</span>
+        <span className="font-medium">NM/UA: 0</span>
+        <ArrowUp size={18} className="text-emerald-500" />
       </div>
 
       {/* Grid */}
@@ -53,19 +59,22 @@ export default function HomePage() {
               href={link.href}
               className={cn(
                 "group rounded-xl border bg-card/80 backdrop-blur p-6",
-                "flex items-center gap-4 transition-all",
-                "hover:shadow-lg hover:-translate-y-1 hover:bg-accent/40",
-                "active:scale-[0.98]",
+                "flex items-center gap-4 transition-all duration-200",
+                "hover:shadow-xl hover:-translate-y-1 hover:bg-accent/40",
+                "active:scale-[0.98]"
               )}
             >
               {Icon && (
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <div className="flex h-12 w-12 items-center justify-center 
+                  rounded-lg bg-primary/10 text-primary 
+                  transition-all duration-200
+                  group-hover:bg-gray-500 group-hover:text-gray-300">
                   <Icon className="h-6 w-6" />
                 </div>
               )}
 
               <div>
-                <div className="font-medium group-hover:underline">
+                <div className="font-medium tracking-tight group-hover:underline">
                   {link.name}
                 </div>
                 <div className="text-xs text-muted-foreground">
@@ -89,19 +98,32 @@ export default function HomePage() {
       </div>
 
       {/* Footer Highlights */}
-      <div className="flex flex-col md:flex-row max-w-4xl py-2 px-2 mt-4 text-center mx-auto dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm justify-between items-center gap-2 text-xs md:text-sm">
-        <span>ZERO INCIDENTS</span>
-        <span className="hidden md:block">|</span>
-        <span>OPERATIONAL EXCELLENCE</span>
-        <span className="hidden md:block">|</span>
-        <span>ENVIRONMENTAL COMPLIANCE</span>
+      <div className="flex flex-col md:flex-row max-w-4xl py-2 px-2 mt-4 text-center mx-auto 
+        bg-gradient-to-r from-neutral-100 to-neutral-50
+        dark:from-slate-700 dark:to-slate-800
+        text-neutral-600 dark:text-neutral-400
+        rounded-sm justify-between items-center gap-2 
+        text-xs md:text-sm shadow-sm">
+        <span className="font-medium tracking-wide">ZERO INCIDENTS</span>
+        <span className="hidden md:block text-muted-foreground">|</span>
+        <span className="font-medium tracking-wide">OPERATIONAL EXCELLENCE</span>
+        <span className="hidden md:block text-muted-foreground">|</span>
+        <span className="font-medium tracking-wide">ENVIRONMENTAL COMPLIANCE</span>
       </div>
 
-      <div className="max-w-4xl border-y-2 text-center mx-auto py-2 px-3 mt-4 rounded-xl flex justify-around items-center text-xs md:text-sm">
-        <span>MISSION</span> | <span>VISION</span>
+      <div className="max-w-4xl border-y text-center mx-auto py-2 px-3 mt-4 
+        rounded-xl flex justify-around items-center 
+        text-xs md:text-sm ">
+        <span className="font-medium tracking-wide hover:text-primary cursor-pointer transition">
+          MISSION
+        </span>
+        <span className="text-muted-foreground">|</span>
+        <span className="font-medium tracking-wide hover:text-primary cursor-pointer transition">
+          VISION
+        </span>
       </div>
 
-      <h1 className="text-center text-sm md:text-md text-muted-foreground mt-2">
+      <h1 className="text-center text-sm md:text-md text-muted-foreground mt-2 tracking-wide">
         MOBILE MARINE INTL
       </h1>
     </section>
