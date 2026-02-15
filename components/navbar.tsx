@@ -28,10 +28,10 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
-              <SheetTitle className="m-4">Menu</SheetTitle>
+              <SheetTitle className="m-2">Menu</SheetTitle>
 
               {/* Public / Navbar Links */}
-              <nav className="flex flex-col gap-2 mt-2 ml-4">
+              <nav className="flex flex-col gap-2 ml-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
@@ -70,11 +70,11 @@ export function Navbar() {
               alt="Global Marine Logo"
               width={48}
               height={48}
-              className="object-contain rounded-full w-12 h-12 md:w-12 md:h-12"
+              className="object-contain rounded-full w-8 md:w-12 h-8 md:h-12"
             />
 
-            <div className="flex flex-col">
-              <span className="text-xl text-neutral-400">Mobile Marine</span>{" "}
+            <div className="hidden md:flex flex-col">
+              <span className="text-md md:text-xl text-neutral-400">Mobile Marine</span>{" "}
               QHSEE Management Portal
             </div>
           </Link>

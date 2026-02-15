@@ -31,22 +31,26 @@ export const navLinks: links[] = [
 // ---------------- Home links ----------------
 export const homeLinks: links[] = [
   { name: "Manuals & Procedures", href: "/portal/manuals-procedures", icon: BookOpen },
-  { name: "Bunkering & Analytics", href: "/home/bunkering-analytics", icon: Layers },
+  { name: "Bunkering & Analytics", href: "/portal/bunkering-analytics", icon: Layers },
   { name: "Crewing", href: "/portal/crewing", icon: Layers },
-  { name: "All Forms", href: "/home/all-forms", icon: Layers },
+  { name: "All Forms", href: "/portal/all-forms", icon: Layers },
   { name: "Work Permit", href: "/portal/work-permit", icon: Layers },
   { name: "Incident Investigation / NM / UA", href: "/portal/incident-investigation", icon: AlertTriangle },
-  { name: "Flag Requirements & Circulars", href: "/home/flag-requirements-circulars", icon: Flag },
+  { name: "Flag Requirements & Circulars", href: "/portal/flag-requirements-circulars", icon: Flag },
   { name: "Risk Assessment", href: "/portal/risk-assessment", icon: Activity },
-  { name: "Company Circulars", href: "/home/company-circulars", icon: ClipboardList },
+  { name: "Company Circulars", href: "/portal/company-circulars", icon: ClipboardList },
 ]
 
 // ---------------- Portal links ----------------
 export const portalLinks: links[] = [
   { name: "Crewing", href: "/portal/crewing", icon: Layers },
   { name: "Company Policies", href: "/portal/company-policies", icon: FileText },
+  { name: "Bunkering & Analytics", href: "/portal/bunkering-analytics", icon: Layers },
+  { name: "All Forms", href: "/portal/all-forms", icon: Layers },
+  { name: "Company Circulars", href: "/portal/company-circulars", icon: ClipboardList },
   { name: "Manuals & Procedures", href: "/portal/manuals-procedures", icon: BookOpen },
   { name: "Deck Forms", href: "/portal/deck-forms", icon: Anchor },
+  { name: "Flag Requirements & Circulars", href: "/portal/flag-requirements-circulars", icon: Flag },
   { name: "Engine Forms", href: "/portal/engine-forms", icon: Settings },
   { name: "Miscellaneous Forms", href: "/portal/miscellaneous-forms", icon: Settings },
   { name: "Work Permit", href: "/portal/work-permit", icon: FileText },

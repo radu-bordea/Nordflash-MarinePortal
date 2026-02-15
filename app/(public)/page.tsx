@@ -9,17 +9,17 @@ import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-6">
+    <section className="w-full max-w-6xl mx-auto px-4 py-4">
       <div className="flex flex-col md:flex-row items-center justify-center gap-2">
         {/* Header */}
         <div className=" text-center mb-2">
-          <h1 className="text-2xl font-semibold">
+          <h1 className="text-md md:text-2xl font-semibold">
             <span className="text-neutral-400">Mobile Marine</span>{" "}
-            <span className="text-xl text-neutral-500">
+            <span className=" text-neutral-500">
               QHSEE Management Portal
             </span>
           </h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs md:text-sm text-muted-foreground">
             QUALITY - HEALTH - SAFETY - ENERGY ENVIRONMENT
           </p>
         </div>
@@ -35,15 +35,15 @@ export default function HomePage() {
       </div>
 
       {/* KPI Bar */}
-      <div className="max-w-md mx-auto py-2 px-3 my-8 dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm flex justify-between items-center text-sm md:text-lg">
+      <div className="max-w-md mx-auto py-1 px-3 my-4 dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm flex justify-between items-center text-xs md:text-sm">
         <span>TRIR: 0.00</span>
         <span>LTIF: 0.00</span>
         <span>NM/UA: 0</span>
-        <ArrowUp size={20} className="text-black" />
+        <ArrowUp size={20} className="text-black m" />
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {homeLinks.map((link) => {
           const Icon = link.icon;
 
@@ -89,7 +89,7 @@ export default function HomePage() {
       </div>
 
       {/* Footer Highlights */}
-      <div className="flex flex-col md:flex-row max-w-4xl py-2 px-2 my-6 text-center mx-auto dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm justify-between items-center gap-2">
+      <div className="flex flex-col md:flex-row max-w-4xl py-2 px-2 mt-4 text-center mx-auto dark:bg-slate-700 dark:text-neutral-400 bg-neutral-100 text-neutral-500 rounded-sm justify-between items-center gap-2 text-xs md:text-sm">
         <span>ZERO INCIDENTS</span>
         <span className="hidden md:block">|</span>
         <span>OPERATIONAL EXCELLENCE</span>
@@ -97,11 +97,11 @@ export default function HomePage() {
         <span>ENVIRONMENTAL COMPLIANCE</span>
       </div>
 
-      <div className="max-w-4xl border-y-2 text-center mx-auto py-6 px-2 my-8 rounded-xl flex justify-around items-center text-md md:text-lg">
+      <div className="max-w-4xl border-y-2 text-center mx-auto py-2 px-3 mt-4 rounded-xl flex justify-around items-center text-xs md:text-sm">
         <span>MISSION</span> | <span>VISION</span>
       </div>
 
-      <h1 className="text-center text-md md:text-lg text-muted-foreground">
+      <h1 className="text-center text-sm md:text-md text-muted-foreground mt-2">
         MOBILE MARINE INTL
       </h1>
     </section>
