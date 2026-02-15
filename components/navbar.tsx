@@ -63,22 +63,30 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="font-bold text-sm tracking-wide flex flex-row gap-4 text-gray-400"
+            className="font-bold text-sm tracking-wide hidden md:flex flex-row gap-4 text-gray-400"
           >
             <Image
               src="/mobilemarine.jpg"
               alt="Global Marine Logo"
               width={48}
               height={48}
-              className="object-contain rounded-full w-8 md:w-12 h-8 md:h-12"
+              className="object-contain rounded-full w-6 md:w-8 h-6 md:h-8"
             />
 
-            <div className="hidden md:flex flex-col">
-              <span className="text-md md:text-xl text-neutral-400">Mobile Marine</span>{" "}
+            <div className="flex flex-col">
+              <span className="text-md md:text-xl text-neutral-400">
+                Mobile Marine
+              </span>{" "}
               QHSEE Management Portal
             </div>
           </Link>
         </div>
+
+
+          <div className="text-md md:text-xl text-neutral-400">
+            Sustainable Maritime Excellence
+          </div>{" "}
+        
 
         {/* Desktop Links */}
         <nav className="hidden md:flex items-center gap-6">
@@ -94,7 +102,7 @@ export function Navbar() {
         </nav>
 
         {/* Right */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <ThemeToggle />
 
           <SignedOut>
